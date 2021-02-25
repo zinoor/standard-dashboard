@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
+  Box,
   Container,
   Grid,
   makeStyles
 } from '@material-ui/core';
 import Page from 'src/components/Page';
-import Budget from './Budget';
-import LatestOrders from './LatestOrders';
-import LatestProducts from './LatestProducts';
-import Sales from './Sales';
-import TasksProgress from './TasksProgress';
-import TotalCustomers from './TotalCustomers';
-import TotalProfit from './TotalProfit';
-import TrafficByDevice from './TrafficByDevice';
+import ProductCard from 'src/views/product/ProductListView/ProductCard';
+import data from 'src/views/product/ProductListView/data';
+import ProductDesignMetric from './ProductDesignMetric';
+import ProductTestingMetric from './ProductTestingMetric';
+import ProductCodingMetric from './ProductCodingMetric';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Dashboard = () => {
   const classes = useStyles();
-
+  const [products] = useState(data);
   return (
     <Page
       className={classes.root}
@@ -36,77 +34,45 @@ const Dashboard = () => {
           container
           spacing={3}
         >
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            <Budget />
+          <Grid item>
+            <Box mt={3}>
+              <Grid
+                container
+                spacing={3}
+              >
+                {products.map((product) => (
+                  <Grid
+                    item
+                    key={product.id}
+                    lg={4}
+                    md={6}
+                    xs={12}
+                  >
+                    <ProductCard
+                      className={classes.productCard}
+                      product={product}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
           </Grid>
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            <TotalCustomers />
+        </Grid>
+        <Grid container spacing={3}>
+          <Grid item>
+            <Box mt={6}>
+              <ProductDesignMetric />
+            </Box>
           </Grid>
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            <TasksProgress />
+          <Grid item>
+            <Box mt={6}>
+              <ProductTestingMetric />
+            </Box>
           </Grid>
-          <Grid
-            item
-            lg={3}
-            sm={6}
-            xl={3}
-            xs={12}
-          >
-            <TotalProfit />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <Sales />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <TrafficByDevice />
-          </Grid>
-          <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-          >
-            <LatestProducts />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={12}
-            xl={9}
-            xs={12}
-          >
-            <LatestOrders />
+          <Grid item>
+            <Box mt={6}>
+              <ProductCodingMetric />
+            </Box>
           </Grid>
         </Grid>
       </Container>

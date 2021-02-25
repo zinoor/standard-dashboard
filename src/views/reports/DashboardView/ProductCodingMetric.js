@@ -14,7 +14,7 @@ import {
   useTheme
 } from '@material-ui/core';
 import CheckOutlinedIcon from '@material-ui/icons/CheckOutlined';
-import DoubleArrowOutlinedIcon from '@material-ui/icons/DoubleArrowOutlined';
+import RotateLeftOutlinedIcon from '@material-ui/icons/RotateLeftOutlined';
 import AutorenewOutlinedIcon from '@material-ui/icons/AutorenewOutlined';
 
 const useStyles = makeStyles(() => ({
@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const TrafficByDevice = ({ className, ...rest }) => {
+const ProductCodingMetric = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -76,7 +76,7 @@ const TrafficByDevice = ({ className, ...rest }) => {
     {
       title: 'In-Progress',
       value: 20,
-      icon: DoubleArrowOutlinedIcon,
+      icon: RotateLeftOutlinedIcon,
       color: colors.orange[600]
     },
     {
@@ -142,8 +142,8 @@ const TrafficByDevice = ({ className, ...rest }) => {
   );
 };
 
-TrafficByDevice.propTypes = {
+ProductCodingMetric.propTypes = {
   className: PropTypes.string
 };
 
-export default TrafficByDevice;
+export default ProductCodingMetric;

@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import {
   Avatar,
-  Box,
   Card,
   CardContent,
   Grid,
@@ -11,8 +10,7 @@ import {
   colors,
   makeStyles
 } from '@material-ui/core';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
-import PeopleIcon from '@material-ui/icons/PeopleOutlined';
+import DeveloperModeOutlinedIcon from '@material-ui/icons/DeveloperModeOutlined';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,45 +45,19 @@ const TotalCustomers = ({ className, ...rest }) => {
           spacing={3}
         >
           <Grid item>
-            <Typography
-              color="textSecondary"
-              gutterBottom
-              variant="h6"
-            >
-              TOTAL CUSTOMERS
-            </Typography>
+            <Avatar className={classes.avatar}>
+              <DeveloperModeOutlinedIcon />
+            </Avatar>
+          </Grid>
+          <Grid item>
             <Typography
               color="textPrimary"
               variant="h3"
             >
-              1,600
+              Product Testing Standards
             </Typography>
           </Grid>
-          <Grid item>
-            <Avatar className={classes.avatar}>
-              <PeopleIcon />
-            </Avatar>
-          </Grid>
         </Grid>
-        <Box
-          mt={2}
-          display="flex"
-          alignItems="center"
-        >
-          <ArrowUpwardIcon className={classes.differenceIcon} />
-          <Typography
-            className={classes.differenceValue}
-            variant="body2"
-          >
-            16%
-          </Typography>
-          <Typography
-            color="textSecondary"
-            variant="caption"
-          >
-            Since last month
-          </Typography>
-        </Box>
       </CardContent>
     </Card>
   );

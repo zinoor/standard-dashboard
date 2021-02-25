@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import {
   Avatar,
   Box,
+  Button,
   Card,
   CardContent,
   Divider,
@@ -11,8 +12,7 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
-import AccessTimeIcon from '@material-ui/icons/AccessTime';
-import GetAppIcon from '@material-ui/icons/GetApp';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,35 +76,15 @@ const ProductCard = ({ className, product, ...rest }) => {
             className={classes.statsItem}
             item
           >
-            <AccessTimeIcon
-              className={classes.statsIcon}
-              color="action"
-            />
-            <Typography
-              color="textSecondary"
-              display="inline"
-              variant="body2"
+            <Button
+              color="primary"
+              endIcon={<ArrowRightIcon />}
+              size="small"
+              variant="text"
+              href={product.link}
             >
-              Updated 2hr ago
-            </Typography>
-          </Grid>
-          <Grid
-            className={classes.statsItem}
-            item
-          >
-            <GetAppIcon
-              className={classes.statsIcon}
-              color="action"
-            />
-            <Typography
-              color="textSecondary"
-              display="inline"
-              variant="body2"
-            >
-              {product.totalDownloads}
-              {' '}
-              Downloads
-            </Typography>
+              Details
+            </Button>
           </Grid>
         </Grid>
       </Box>

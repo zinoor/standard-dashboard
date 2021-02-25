@@ -14,7 +14,7 @@ import {
   useTheme
 } from '@material-ui/core';
 import CheckOutlinedIcon from '@material-ui/icons/CheckOutlined';
-import DoubleArrowOutlinedIcon from '@material-ui/icons/DoubleArrowOutlined';
+import RotateLeftOutlinedIcon from '@material-ui/icons/RotateLeftOutlined';
 import AutorenewOutlinedIcon from '@material-ui/icons/AutorenewOutlined';
 
 const useStyles = makeStyles(() => ({
@@ -23,14 +23,14 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const TrafficByDevice = ({ className, ...rest }) => {
+const ProductTestingMetric = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
   const data = {
     datasets: [
       {
-        data: [50, 20, 30],
+        data: [70, 20, 10],
         backgroundColor: [
           colors.green[600],
           colors.orange[600],
@@ -69,19 +69,19 @@ const TrafficByDevice = ({ className, ...rest }) => {
   const devices = [
     {
       title: 'Approved',
-      value: 50,
+      value: 70,
       icon: CheckOutlinedIcon,
       color: colors.green[600]
     },
     {
       title: 'In-Progress',
       value: 20,
-      icon: DoubleArrowOutlinedIcon,
+      icon: RotateLeftOutlinedIcon,
       color: colors.orange[600]
     },
     {
       title: 'Proposed',
-      value: 30,
+      value: 10,
       icon: AutorenewOutlinedIcon,
       color: colors.blue[500]
     }
@@ -92,7 +92,7 @@ const TrafficByDevice = ({ className, ...rest }) => {
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader title="Product Coding Standard Metrics" />
+      <CardHeader title="Product Testing Standard Metrics" />
       <Divider />
       <CardContent>
         <Box
@@ -142,8 +142,8 @@ const TrafficByDevice = ({ className, ...rest }) => {
   );
 };
 
-TrafficByDevice.propTypes = {
+ProductTestingMetric.propTypes = {
   className: PropTypes.string
 };
 
-export default TrafficByDevice;
+export default ProductTestingMetric;

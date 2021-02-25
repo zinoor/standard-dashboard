@@ -24,13 +24,20 @@ const useStyles = makeStyles(() => createStyles({
     '#root': {
       height: '100%',
       width: '100%'
+    },
+    '.logo': {
+      height: '60px',
+      paddingTop: '10px',
+    },
+    '.mt-6': {
+      marginTop: '24px',
     }
+
   }
 }));
 
 const GlobalStyles = () => {
   useStyles();
-
   return null;
 };
 
