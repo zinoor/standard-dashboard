@@ -1,12 +1,12 @@
 {
-  "homepage": "https://github-enterprise-pilot.mathworks.com/szinoor/Standards_Syed",
+  "homepage": "http://zinoor.github.io/standard-dashboard",
   "name": "react-material-dashboard",
   "author": "DeviasIO",
   "licence": "MIT",
   "version": "1.0.0",
   "private": false,
   "scripts": {
-    "predeploy": "npm  run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
