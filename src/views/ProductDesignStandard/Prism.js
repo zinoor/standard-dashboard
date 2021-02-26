@@ -41,27 +41,15 @@ const Prism = () => {
           icons={tableIcons}
           title="Prism Standards"
           columns={[
-            { title: 'Name', field: 'name' },
-            { title: 'Surname', field: 'surname' },
-            { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
-            {
-              title: 'Birth Place',
-              field: 'birthCity',
-              lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' }
-            }
+            { title: 'Standard Program', field: 'name' },
+            { title: 'Statement', field: 'Statement' },
+            { title: 'Link to Standard', field: 'link' },
           ]}
           data={[
             {
-              name: 'Mehmet',
-              surname: 'Baran',
-              birthYear: 1987,
-              birthCity: 63
-            },
-            {
-              name: 'Zerya Betül',
-              surname: 'Baran',
-              birthYear: 2017,
-              birthCity: 34
+              name: 'PRISM Standards',
+              Statement: 'DO NOT use an underscore (_) in names.',
+              link: <a href="www.mathworks.com" target="_blank" rel="noreferrer">Link to Standard</a>,
             }
           ]}
           options={{

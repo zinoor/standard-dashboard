@@ -41,27 +41,20 @@ const MatlabStandard = () => {
           icons={tableIcons}
           title="Matlab Standards"
           columns={[
-            { title: 'Name', field: 'name' },
-            { title: 'Surname', field: 'surname' },
-            { title: 'Birth Year', field: 'birthYear', type: 'numeric' },
-            {
-              title: 'Birth Place',
-              field: 'birthCity',
-              lookup: { 34: 'İstanbul', 63: 'Şanlıurfa' }
-            }
+            { title: 'Standard Program', field: 'name' },
+            { title: 'Statement', field: 'Statement' },
+            { title: 'Link to Standard', field: 'link' },
           ]}
           data={[
             {
-              name: 'Mehmet',
-              surname: 'Baran',
-              birthYear: 1987,
-              birthCity: 63
+              name: 'MATLAB Unit Testing Standards',
+              Statement: 'Do not re-enter tests',
+              link: <a href="https://mathworks.sharepoint.com/sites/devu/testingresourcecenter/testingstandards/TestStandardsMATLABUnit/Standard%20-%20Do%20not%20re-enter%20tests.aspx" target="_blank" rel="noreferrer">Link to Standard</a>,
             },
             {
-              name: 'Zerya Betül',
-              surname: 'Baran',
-              birthYear: 2017,
-              birthCity: 34
+              name: 'MATLAB Unit Testing Standards',
+              Statement: 'Do not submit large files to BaT',
+              link: <a href="https://mathworks.sharepoint.com/sites/devu/testingresourcecenter/testingstandards/TestStandardsMATLABUnit/Standard%20-%20Do%20not%20submit%20large%20files%20to%20BaT.aspx" target="_blank" rel="noreferrer">Link to Standard</a>,
             }
           ]}
           options={{
