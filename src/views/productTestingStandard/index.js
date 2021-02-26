@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 import Page from 'src/components/Page';
 import ProductCard from 'src/views/product/ProductListView/ProductCard';
-import data from './data';
+import data from '../productCodingStandard/data';
 
 const useStyles = makeStyles((theme) => ({
   root: {
